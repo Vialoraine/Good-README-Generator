@@ -38,6 +38,59 @@ function writeToFile(fileName, data) {
 
 // function to initialize program
 function init() {
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "title",
+        message: questions[0],
+      },
+      {
+        type: "input",
+        name: "title",
+        message: questions[0],
+      },
+      {
+        type: "input",
+        name: "title",
+        message: questions[0],
+      },
+      {
+        type: "input",
+        name: "title",
+        message: questions[0],
+      },
+      {
+        type: "input",
+        name: "title",
+        message: questions[0],
+      },
+      {
+        type: "input",
+        name: "title",
+        message: questions[0],
+      },
+      {
+        type: "input",
+        name: "title",
+        message: questions[0],
+      },
+      {
+        type: "input",
+        name: "title",
+        message: questions[0],
+      },
+      {
+        type: "input",
+        name: "title",
+        message: questions[0],
+      },
+      {
+        type: "input",
+        name: "title",
+        message: questions[0],
+      },                                
+    ])
 
 }
 
