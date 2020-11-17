@@ -91,7 +91,9 @@ function init() {
         message: questions[0],
       },                                
     ])
-
+    .then((answers) => {
+      writeToFile("README.md", answers);
+    });
 }
 
 // function call to initialize program
