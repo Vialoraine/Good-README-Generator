@@ -1,18 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const generateMarkdown = require("./utils/generateMarkdown");
-const { type } = require("os");
-
-// LS 11 / 17: TO BE DELETED.
-//   * Title
-//   * Description
-//   * Table of Contents
-//   * Installation
-//   * Usage
-//   * License
-//   * Contributing
-//   * Tests
-//   * Questions
 
 // array of questions for user
 const questions = [
@@ -36,11 +24,6 @@ function writeToFile(fileName, data) {
     if (err) console.log(err)
   });
 }
-
-// LS 11 / 17: TO BE DELETED.
-// update function init() {
-// }
-// from bellow with type, name, messages of the question array from above 
 
 // function to initialize program
 function init() {
