@@ -79,22 +79,22 @@ function init() {
       },
       {
         type: "input",
-        name: "title",
+        name: "contribution",
         message: questions[6],
       },
       {
         type: "input",
-        name: "title",
+        name: "testing",
         message: questions[7],
       },
       {
         type: "input",
-        name: "title",
+        name: "GitHub",
         message: questions[8],
       },
       {
         type: "input",
-        name: "title",
+        name: "email",
         message: questions[9],
       },                                
     ])
