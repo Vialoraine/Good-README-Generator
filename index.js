@@ -55,7 +55,7 @@ function init() {
         message: questions[4],
       },
       {
-        type: "input",
+        type: "list",
         name: "license",
         message: questions[5],
         choices: ["None", "MIT", "Apache", "GPL"],
