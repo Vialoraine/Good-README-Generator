@@ -53,48 +53,49 @@ function init() {
       },
       {
         type: "input",
-        name: "title",
-        message: questions[0],
+        name: "description",
+        message: questions[1],
+      },
+      {
+        type: "input",
+        name: "contents",
+        message: questions[2],
+      },
+      {
+        type: "input",
+        name: "installation",
+        message: questions[3],
+      },
+      {
+        type: "input",
+        name: "usage",
+        message: questions[4],
+      },
+      {
+        type: "input",
+        name: "license",
+        message: questions[5],
+        choices: ["None", "MIT", "Apache", "GPL"],
       },
       {
         type: "input",
         name: "title",
-        message: questions[0],
+        message: questions[6],
       },
       {
         type: "input",
         name: "title",
-        message: questions[0],
+        message: questions[7],
       },
       {
         type: "input",
         name: "title",
-        message: questions[0],
+        message: questions[8],
       },
       {
         type: "input",
         name: "title",
-        message: questions[0],
-      },
-      {
-        type: "input",
-        name: "title",
-        message: questions[0],
-      },
-      {
-        type: "input",
-        name: "title",
-        message: questions[0],
-      },
-      {
-        type: "input",
-        name: "title",
-        message: questions[0],
-      },
-      {
-        type: "input",
-        name: "title",
-        message: questions[0],
+        message: questions[9],
       },                                
     ])
     .then((answers) => {
