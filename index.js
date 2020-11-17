@@ -1,11 +1,30 @@
-const inquirer =  require("inquirer");
-const fs =  require("fs");
+const inquirer = require("inquirer");
+const fs = require("fs");
 const generateMarkdown = require("./utils/generateMarkdown");
 
+// LS 11 / 17: TO BE DELETED.
+//   * Title
+//   * Description
+//   * Table of Contents
+//   * Installation
+//   * Usage
+//   * License
+//   * Contributing
+//   * Tests
+//   * Questions
 
 // array of questions for user
 const questions = [
-
+  "What is the title of your project?",
+  "What is a description of your project?",
+  "What does your project repository contain?"
+  "What are the installation instructions?",
+  "How do you use the project?",
+  "What License is your project protected by?",
+  "What are your contribution guidelines?",
+  "What are the testing instructions?",
+  "What is your GitHub username?",
+  "What is your email address?",
 ];
 
 // function to write README file
