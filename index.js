@@ -6,7 +6,7 @@ const generateMarkdown = require("./utils/generateMarkdown");
 const questions = [
   "What is the title of your project?",
   "What is a description of your project?",
-  "What does your project repository contain?"
+  "What does your project repository contain?",
   "What are the installation instructions?",
   "How do you use the project?",
   "What License is your project protected by?",
