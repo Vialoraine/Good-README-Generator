@@ -1,90 +1,71 @@
-const inquirer = require("inquirer");
+//Importing required packages and generateMarkdown.js.
 const fs = require("fs");
-const generateMarkdown = require("./utils/generateMarkdown");
-
-// array of questions for user
+const inquirer = require("inquirer");
+const md = require("./utils/generateMarkdown.js");
+//Creating an object containing the questions to use with Inquirer
 const questions = [
-  "What is the title of your project?",
-  "What is a description of your project?",
-  "What does your project repository contain?",
-  "What are the installation instructions?",
-  "How do you use the project?",
-  "What License is your project protected by?",
-  "What are your contribution guidelines?",
-  "What are the testing instructions?",
-  "What is your GitHub username?",
-  "What is your email address?",
+  {
+    type: "input",
+    message: "What is your GitHub username?",
+    name: "username"
+  },
+  {
+    type: "input",
+    message: "What is your email address?",
+    name: "email"
+  },
+  {
+    type: "input",
+    message: "What is your project's name?",
+    name: "projectname"
+  },
+  {
+    type: "input",
+    message: "Please write a short description of your project:",
+    name: "description"
+  },
+  {
+    type: "list",
+    message: "What kind of license should your project have?",
+    name: "license",
+    choices: ["MIT", "MPL", "GPL", "Apache", "Boost"]
+  },
+  {
+    type: "input",
+    message: "What command should be run to install dependencies?",
+    name: "installation"
+  },
+  {
+    type: "input",
+    message: "What command should be run to run tests?",
+    name: "tests"
+  },
+  {
+    type: "input",
+    message: "What does the user need to know about using the repo?",
+    name: "usage"
+  },
+  {
+    type: "input",
+    message: "What does the user need to know about contributing to the repo?",
+    name: "contributing"
+  }
 ];
 
-// function to write README file
+//Function to run in the initialization that accepts the file name and the response data as parameters.
 function writeToFile(fileName, data) {
-  console.log(data);
-  const generateMarkdown = generateMarkdown(data)
-  fs.writeFile(fileName, generateMarkdown, (err) => {
-    if (err) console.log(err)
-  });
+
+  const inputData = md(data);
+  fs.appendFile(fileName, inputData, (err) => { if (err) { console.log(err) } });
 }
 
-// function to initialize program
+//Function initializing Inquirer to prompt for the README information and create the README file.
 function init() {
-  inquirer
-    .prompt([
-      {
-        type: "input",
-        name: "title",
-        message: questions[0],
-      },
-      {
-        type: "input",
-        name: "description",
-        message: questions[1],
-      },
-      {
-        type: "input",
-        name: "contents",
-        message: questions[2],
-      },
-      {
-        type: "input",
-        name: "installation",
-        message: questions[3],
-      },
-      {
-        type: "input",
-        name: "usage",
-        message: questions[4],
-      },
-      {
-        type: "list",
-        name: "license",
-        message: questions[5],
-        choices: ["None", "MIT", "Apache", "GPL"],
-      },
-      {
-        type: "input",
-        name: "contribution",
-        message: questions[6],
-      },
-      {
-        type: "input",
-        name: "testing",
-        message: questions[7],
-      },
-      {
-        type: "input",
-        name: "GitHub",
-        message: questions[8],
-      },
-      {
-        type: "input",
-        name: "email",
-        message: questions[9],
-      },                                
-    ])
-    .then((answers) => {
-      writeToFile("README.md", answers);
-    });
+  inquirer.prompt(questions)
+    .then((response) => {
+      writeToFile("README.md", response);
+    })
+    .catch((err) => { console.log(err) });
 }
 
-// function call to initialize program
 init();
