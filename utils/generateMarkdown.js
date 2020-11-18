@@ -1,41 +1,52 @@
-// function to generate markdown for README
+//Generate Markdown formatted README file.
+let selectedLicense = [];
 function generateMarkdown(data) {
-  return `
-  # ${data.title}
-  ![GitHub](https://img.shields.io/github/license/${data.github}/${data.title})
-  ## Description <a name="description"></a>
-  - ${data.description}
+  switch (data.license) {
+    case "MIT":
+      selectedLicense[0] = "![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)";
+      selectedLicense[1] = "(https://opensource.org/licenses/MIT)";
+      break;
+    case "MPL":
+      selectedLicense[0] = "![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)";
+      selectedLicense[1] = "(https://opensource.org/licenses/MPL-2.0)";
+      break;
+    case "GPL":
+      selectedLicense[0] = "![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)";
+      selectedLicense[1] = "(https://www.gnu.org/licenses/gpl-3.0)";
+      break;
+    case "Apache":
+      selectedLicense[0] = "![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)";
+      selectedLicense[1] = "(https://opensource.org/licenses/Apache-2.0)";
+      break;
+    case "Boost":
+      selectedLicense[0] = "![License](https://img.shields.io/badge/License-Boost%201.0-lightblue.svg)";
+      selectedLicense[1] = "(https://www.boost.org/LICENSE_1_0.txt)";
+      break;
+  }
+  return `# ${data.projectname}
+  ${selectedLicense[0]}
+  ## Description
+  ${data.description}
   ## Table of Contents
-  1. [Description] (#description)
-  2. [Installation Instructions](#installation)
-  3. [Usage Information](#usage)
-  4. [License](#license)
-  5. [Contribution Guideline](#contributing)
-  6. [Test Instructions](#test)
-  7. [Questions](#questions)
-  8. [Screenshots](#screenshots)
- 
- 
-  ### Installation Instructions <a name="installation"></a>
-  - ${data.installation}
-  ### Usage Information <a name="Usage"></a>
-  - ${data.usage}
-  ## License <a name="license"></a>
-  - This application is covered under ${data.license} license. 
-  ## Contribution Guideline <a name="contribution"></a>
-  - ${data.contribution}
-  ## Test Instructions <a name="tests"></a>
-  - ${data.testing}
-  ## Questions <a name="questions"></a>
-  Any questions? Please Contact Below
-  - GitHub Link: 
-  [${data.GitHub}](https://github.com/${data.github}) 
-  - Email: 
-  ${data.email}
-  ## Screenshots <a name="screenshots"></a>
-  ![](././Develop/screenshots/Screenshot1.png)
-  
-`;
+  * [Usage](#usage)
+  * [License](#license)
+  * [Contributing](#contributing)
+  * [Tests](#tests)
+  * [Questions](#questions)
+  ## Installation
+  ${data.installation} is used to install dependencies.
+  ## Usage
+  ${data.usage}
+  ## License
+  ${selectedLicense[0]}
+  ${selectedLicense[1]}
+  ## Contributing
+  ${data.contributing}
+  ## Tests
+  ${data.tests} is used to run tests.
+  ## Questions
+  Have a question? Email me directly at ${data.email}.
+  Check out my other projects at [${data.username}](https://github.com/${data.projectname}).`;
 }
-
+//Export function for us with index.js.
 module.exports = generateMarkdown;
