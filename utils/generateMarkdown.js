@@ -44,6 +44,7 @@ function generateMarkdown(data) {
   ${data.contributing}
   ## Tests
   ${data.tests} is used to run tests.
+  ## Screenshots
   ## Questions
   Have a question? Email me directly at ${data.email}.
   Check out my other projects at [${data.username}](https://github.com/${data.projectname}).`;
