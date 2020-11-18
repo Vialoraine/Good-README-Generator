@@ -11,7 +11,7 @@
   * [Tests](#tests)
   * [Questions](#questions)
   ## Installation
-  npm init is used to install dependencies. is used to install dependencies.
+  npm init -y is used to install dependencies. is used to install dependencies.
   ## Usage
   Node.js must be installed onto your system prior to usage.
   Repo MUST include package.json with required dependencies. (Hint: Run npm init when you first setup the project before installing any dependencies.
