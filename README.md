@@ -23,6 +23,7 @@
   ## Tests
   node index.js is used to run tests. is used to run tests.
   ## Screenshots
+  <img src=https://github.com/Vialoraine/Good-README-Generator/blob/main/assets/README.gif?raw=true>
   ## Questions
   Have a question? Email me directly at vialoraine.gg@gmail.com.
   Check out my other projects at [Vialoraine](https://github.com/Good-README-Generator).
