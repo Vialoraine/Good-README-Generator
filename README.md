@@ -11,17 +11,17 @@
   * [Tests](#tests)
   * [Questions](#questions)
   ## Installation
-  npm init is used to install dependencies.
+  ```npm init``` is used to install dependencies.
   ## Usage
   Node.js must be installed onto your system prior to usage.
-  Repo MUST include package.json with required dependencies. (Hint: Run npm init when you first setup the project before installing any dependencies.
+  Repo MUST include package.json with required dependencies.
   ## License
   ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
   (https://opensource.org/licenses/MIT)
   ## Contributing
-  adhere to coding standards, and comment code changes
+  Adhere to coding standards, and comment code changes
   ## Tests
-  node index.js is used to run tests. is used to run tests.
+  ```node index.js``` is used to run tests.
   ## Screenshots
   <img src="https://github.com/Vialoraine/Good-README-Generator/blob/main/assets/README.gif?raw=true">
   ## Questions
